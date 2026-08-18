@@ -14,9 +14,25 @@
             <NuxtLink id="nav-link" to="/about-me" :class="{ active: isActive('/about-me') }">
               _about-me
             </NuxtLink>
-  
+
             <NuxtLink id="nav-link" to="/projects" :class="{ active: isActive('/projects') }">
               _projects
+            </NuxtLink>
+
+            <NuxtLink id="nav-link" to="/experience" :class="{ active: isActive('/experience') }">
+              _experience
+            </NuxtLink>
+
+            <NuxtLink id="nav-link" to="/competences" :class="{ active: isActive('/competences') }">
+              _competences
+            </NuxtLink>
+
+            <NuxtLink id="nav-link" to="/certificates" :class="{ active: isActive('/certificates') }">
+              _certificates
+            </NuxtLink>
+
+            <NuxtLink id="nav-link" to="/quiz-me" :class="{ active: isActive('/quiz-me') }">
+              _quiz-me
             </NuxtLink>
           </div>
 
@@ -90,4 +106,3 @@ export default {
 }
 
 </style>
-

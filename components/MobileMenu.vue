@@ -28,6 +28,26 @@
         _projects
       </NuxtLink>
 
+      <NuxtLink id="nav-link-mobile" to="/experience" :class="{ active: isActive('/experience') }"
+        @click="toggleMobileMenu()">
+        _experience
+      </NuxtLink>
+
+      <NuxtLink id="nav-link-mobile" to="/competences" :class="{ active: isActive('/competences') }"
+        @click="toggleMobileMenu()">
+        _competences
+      </NuxtLink>
+
+      <NuxtLink id="nav-link-mobile" to="/certificates" :class="{ active: isActive('/certificates') }"
+        @click="toggleMobileMenu()">
+        _certificates
+      </NuxtLink>
+
+      <NuxtLink id="nav-link-mobile" to="/quiz-me" :class="{ active: isActive('/quiz-me') }"
+        @click="toggleMobileMenu()">
+        _quiz-me
+      </NuxtLink>
+
       <NuxtLink id="nav-link-mobile" to="/contact-me" :class="{ active: isActive('/contact-me') }"
         @click="toggleMobileMenu()">
         _contact-me

@@ -1,5 +1,5 @@
 <template>
-    <form id="contact-form" class="text-sm">
+    <form id="contact-form" class="text-sm" @submit="handleSubmit">
         <div class="flex flex-col">
             <label for="name-input" class="mb-3">_name:</label>
             <input type="text" id="name-input" name="name" :placeholder="name" class="p-2 mb-5 placeholder-slate-600" required>
@@ -12,13 +12,15 @@
             <label for="message-input" class="mb-3">_message:</label>
             <textarea id="message-input" name="message" :placeholder="message" class="placeholder-slate-600" required></textarea>
         </div>
-        <button id="submit-button" type="submit" class="py-2 px-4">submit-message</button>
+        <button id="submit-button" type="submit" class="py-2 px-4" :disabled="sending">
+            {{ sending ? 'sending...' : 'submit-message' }}
+        </button>
+        <p v-if="status === 'success'" id="form-status" class="success-msg">// message sent successfully</p>
+        <p v-if="status === 'error'" id="form-status" class="error-msg">// something went wrong, please try again</p>
     </form>
 </template>
 
 <script>
-
-
 export default {
     name: 'ContactForm',
     props: {
@@ -35,16 +37,44 @@ export default {
             required: true
         }
     },
-    mounted() {
-        document.getElementById("contact-form").addEventListener("submit", function(event) {
+    data() {
+        return {
+            sending: false,
+            status: null
+        }
+    },
+    methods: {
+        async handleSubmit(event) {
             event.preventDefault();
-            const name = document.querySelector('input[name="name"]').value;
-            const email = document.querySelector('input[name="email"]').value;
-            const message = document.querySelector('textarea[name="message"]').value;
-            
-            // Here the code to send the email
-            
-        });
+            this.sending = true;
+            this.status = null;
+
+            const form = event.target;
+            const name = form.querySelector('[name="name"]').value;
+            const email = form.querySelector('[name="email"]').value;
+            const message = form.querySelector('[name="message"]').value;
+
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ name, email, message })
+                });
+
+                if (response.ok) {
+                    this.status = 'success';
+                    form.reset();
+                } else {
+                    this.status = 'error';
+                }
+            } catch (err) {
+                this.status = 'error';
+            } finally {
+                this.sending = false;
+            }
+        }
     }
 }
 </script>
@@ -94,6 +124,23 @@ select:-webkit-autofill:focus {
 
 #submit-button:hover {
     background-color: #263B50;
+}
+
+#submit-button:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+.success-msg {
+    color: #43D9AD;
+    margin-top: 14px;
+    font-size: 13px;
+}
+
+.error-msg {
+    color: #E24B4A;
+    margin-top: 14px;
+    font-size: 13px;
 }
 
 input:focus, #message-input:focus {

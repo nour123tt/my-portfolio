@@ -11,17 +11,17 @@
       <!-- Game Screen -->
       <div id="game-screen" ref="gameScreen"></div>
 
-      <button id="start-button" class="font-fira_retina" @click="startGame">start-game</button>
+           <button id="start-button" class="font-fira_retina" @click="startGame">demarrer-jeu</button>
 
       <!-- Game Over -->
       <div id="game-over" class="hidden">
-        <span class="font-fira_retina text-greenfy bg-bluefy-dark h-12 flex items-center justify-center">GAME OVER!</span>
-        <button class="font-fira_retina text-menu-text text-sm flex items-center justify-center w-full py-6 hover:text-white" @click="startAgain">start-again</button>
+              <span class="font-fira_retina text-greenfy bg-bluefy-dark h-12 flex items-center justify-center">PARTIE TERMINÉE !</span>
+        <button class="font-fira_retina text-menu-text text-sm flex items-center justify-center w-full py-6 hover:text-white" @click="startAgain">rejouer</button>
       </div>
 
       <div id="congrats" class="hidden">
-        <span class="font-fira_retina text-greenfy bg-bluefy-dark h-12 flex items-center justify-center">WELL DONE!</span>
-        <button class="font-fira_retina text-menu-text text-sm flex items-center justify-center w-full py-6 hover:text-white" @click="startAgain">play-again</button>
+                <span class="font-fira_retina text-greenfy bg-bluefy-dark h-12 flex items-center justify-center">BRAVO !</span>
+        <button class="font-fira_retina text-menu-text text-sm flex items-center justify-center w-full py-6 hover:text-white" @click="startAgain">rejouer</button>
       </div>
 
       <div id="console-menu" class="h-full flex flex-col items-end justify-between">
@@ -29,8 +29,8 @@
         <div>
 
         <div id="instructions" class="font-fira_retina text-sm text-white">
-          <p>// use your keyboard</p>
-          <p>// arrows to play</p>
+                <p>// utilise ton clavier</p>
+          <p>// flèches pour jouer</p>
 
           <div id="buttons" class="w-full flex flex-col items-center gap-1 pt-5">
 
@@ -57,7 +57,7 @@
 
         <!-- score board -->
         <div id="score-board" class="w-full flex flex-col pl-5">
-          <p class="font-fira_retina text-white pt-5">// food left</p>
+                   <p class="font-fira_retina text-white pt-5">// nourriture restante</p>
 
           <div id="score" class="grid grid-cols-5 gap-5 justify-items-center pt-5 w-fit">
             <div class="food"></div>
@@ -76,16 +76,17 @@
       </div>
         <!-- skip -->
         <NuxtLink id="skip-btn" to="/about-me" class="font-fira_retina flex hover:bg-white/20">
-          skip
+          passer
         </NuxtLink>
         
       </div>
     </div>
-    
+
   </template>
   
   <script>
   export default {
+    emits: ['food-eaten'],
     data() {
       return {
         score: 0,
@@ -216,6 +217,9 @@
             const scoreFoods = document.getElementsByClassName("food");
             scoreFoods[this.score - 1].style.opacity = 1;
 
+            // 📸 tell the parent page to advance the profile picture
+            this.$emit('food-eaten');
+
             if(this.score === 10) {
               this.snake.unshift({ x: newX, y: newY });
               this.food = { x: null, y: null }
@@ -242,7 +246,7 @@
         let gameScreen = this.$refs.gameScreen;
         gameScreen.innerHTML = "";
 
-        const cellSize = window.innerWidth > 1536 ? "10px" : "8px";
+        const cellSize = window.innerWidth > 1536 ? "14px" : "10px";
 
         for (let i = 0; i < 40; i++) {
 
@@ -369,11 +373,6 @@
       }
     });
 
-    /* window.innerWidth < 1536 ? cellSize = 8 : cellSize = 10; */
-    /* this.food = {
-      x: Math.floor(Math.random() * 24),
-      y: Math.floor(Math.random() * 40)
-    }; */
     window.onresize = () => {
       this.render();
     };
@@ -387,29 +386,28 @@
 
 <style>
 #console {
-    width: 530px;
-    height: 475px;
+    width: 674px;
+    height: 715px;
     border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: linear-gradient(to bottom, rgba(35, 123, 109, 1), rgba(67, 217, 173, 0.13));
     border-radius: 10px;
-    padding: 30px;
+    padding: 34px;
     position: relative;
 
 }
 
 #game-screen {
-    width: 240px;
-    height: 400px;
+    width: 384px;
+    height: 640px;
     border-radius: 10px;
     background-color: rgba(1, 22, 39, 0.84);
     display: flex;
     flex-wrap: wrap;
     box-shadow: inset 0 0 10px #00000071;
 }
-
 #start-button {
   padding-inline: 16px;
   padding-block: 8px;
@@ -430,9 +428,8 @@
 }
 
 #console-menu{
-  height: 400px;
+  height: 640px;
 }
-
 #console-button {
   background-color: #010C15;
   border-radius: 10px;
@@ -467,7 +464,7 @@
   position: absolute;
   bottom: 12%;
   color: #43D9AD;
-  width: 240px;
+  width: 384px;
 }
 
 #game-over, #congrats > span {
@@ -492,13 +489,13 @@
 
 @media (min-width: 1024px) and (max-width: 1536px) {
   #game-screen {
-    width: 192px;
-    height: 320px;
+    width: 240px;
+    height: 400px;
   }
 
   #console {
-    width: 420px;
-    height: 370px;
+    width: 468px;
+    height: 460px;
     padding: 24px;
 
   }
@@ -514,7 +511,7 @@
 }
 
   #console-menu{
-  height: 320px;
+  height: 400px;
 }
 
 #instructions {
@@ -540,7 +537,7 @@
   position: absolute;
   bottom: 10%;
   color: #43D9AD;
-  width: 192px;
+  width: 240px;
 }
 
 #game-over, #congrats > span {

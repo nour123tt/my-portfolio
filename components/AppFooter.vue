@@ -7,11 +7,11 @@
                 find me in:
             </span>
             <div id="social-icons" class="flex">
-                <NuxtLink :to="social.twitter.url + social.twitter.user" target="_blank" class="flex justify-center items-center">
-                    <img src="/icons/social/twitter.svg" alt="twitter"/>
-                </NuxtLink>
                 <NuxtLink :to="social.facebook.url + social.facebook.user" target="_blank" class="flex justify-center items-center">
                     <img src="/icons/social/facebook.svg" alt="facebook"/>
+                </NuxtLink>
+                <NuxtLink :to="social.linkedin.url + social.linkedin.user" target="_blank" class="flex justify-center items-center">
+                    <div class="linkedin-icon-mask"></div>
                 </NuxtLink>
                 <NuxtLink :to="social.github.url + social.github.user" target="_blank" class="flex md:hidden justify-center items-center">
                 <img src="/icons/social/github.svg" alt="github"/>
@@ -65,6 +65,21 @@ footer a:hover {
     opacity: 0.4;
 }
 
+.linkedin-icon-mask {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin: auto;
+    opacity: 0.4;
+    background-color: #607B96;
+    -webkit-mask-image: url('/images/icons/linkdin.png');
+    mask-image: url('/images/icons/linkdin.png');
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+}
 footer > a > img {
     width: 1.25rem; /* 20px */
     height: 1.25rem; /* 20px */
@@ -72,6 +87,10 @@ footer > a > img {
   }
 
 #social-icons > a:hover img {
+    opacity: 1;
+}
+
+#social-icons > a:hover .linkedin-icon-mask {
     opacity: 1;
 }
 
@@ -89,6 +108,11 @@ footer > a > img {
     #social-icons > a > img {
         width: 1.5rem; /* 20px */
         height: 1.5rem; /* 20px */
+  }
+
+  .linkedin-icon-mask {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 }
 

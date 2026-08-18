@@ -6,27 +6,32 @@
     	<div class="css-blurry-gradient-green"></div>
 
 		<section class="hero">
+
+			<!-- profile picture, floats to the left of the title -->
+			<div id="profile-pic" v-if="!isMobile">
+				<img :src="currentProfileImage" alt="profile photo" />
+			</div>
 		
 			<div class="head">
 				<span>
-					Hi all, I am
+					Bonjour, je suis
 				</span>
 				<h1>{{ config.name }}</h1>
         <span class="diple flex">
           >&nbsp;
-				<h2 class="line-1 anim-typewriter max-w-fit"> {{ config.role }} </h2>
+				<h2 class="line-1 line-1-js max-w-fit"> {{ typedText }} </h2>
         </span>
 			</div>
 
 			<div id="info">
 				<span class="action">
-					// complete the game to continue
+					// termine le jeu pour continuer
 				</span>
 				<span :class="{hide: isMobile}">
-					// you can also see it on my Github page
+					// tu peux aussi me retrouver sur Github
 				</span>
 				<span :class="{hide: !isMobile}">
-					// find my profile on Github:
+					// retrouve mon profil sur Github :
 				</span>
 				<p class="code">
 					<span class="identifier">
@@ -46,14 +51,14 @@
 		</section>
 
 		<section data-aos="fade-up" class="game" v-if="!isMobile">
-			<SnakeGame />
+			<SnakeGame @food-eaten="advanceProfileImage" />
 		</section>
 
 	</main>
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import DevConfig from '~/developer.json';
 
 const config = ref(DevConfig)
@@ -61,13 +66,70 @@ const config = ref(DevConfig)
 const isMobile = ref(false)
 const loading = ref(false)
 
+const typedText = ref('')
+let roleIndex = 0
+let charIndex = 0
+let isDeleting = false
+let typeTimeout = null
+
+const typingSpeed = 90
+const deletingSpeed = 45
+const pauseAfterTyped = 1500
+const pauseAfterDeleted = 400
+
+function typeLoop() {
+  const roles = config.value.role
+  const currentRole = roles[roleIndex]
+
+  if (!isDeleting) {
+    charIndex++
+    typedText.value = currentRole.slice(0, charIndex)
+
+    if (charIndex === currentRole.length) {
+      isDeleting = true
+      typeTimeout = setTimeout(typeLoop, pauseAfterTyped)
+      return
+    }
+    typeTimeout = setTimeout(typeLoop, typingSpeed)
+  } else {
+    charIndex--
+    typedText.value = currentRole.slice(0, charIndex)
+
+    if (charIndex === 0) {
+      isDeleting = false
+      roleIndex = (roleIndex + 1) % roles.length
+      typeTimeout = setTimeout(typeLoop, pauseAfterDeleted)
+      return
+    }
+    typeTimeout = setTimeout(typeLoop, deletingSpeed)
+  }
+}
+
+const profileImages = [
+  '/images/me/photo1.jpg',
+  '/images/me/photo2.png',
+  '/images/me/photo4.jpg',
+  '/images/me/photo7.jpg',
+  '/images/me/photo8.jpg',
+  '/images/me/photo9.jpg',
+]
+const profileIndex = ref(1)
+
+const currentProfileImage = computed(() => profileImages[profileIndex.value])
+
+function advanceProfileImage() {
+  profileIndex.value = (profileIndex.value + 1) % profileImages.length
+}
+
 onMounted(() => {
   if (window.innerWidth <= 1024) isMobile.value = true
   window.addEventListener('resize', handleResize)
+  typeLoop()
 })
 
 onBeforeUnmount(() => {
   window.removeEventListener('resize', handleResize)
+  clearTimeout(typeTimeout)
 })
 
 function handleResize() {
@@ -86,12 +148,14 @@ function handleResize() {
   width: 100%;
   flex: 1 1 auto;
   padding-left: 275px;
-  overflow: hidden;
+  padding-right: 60px;
+  overflow: visible;
+  position: relative;
 }
 .hero {
 	width: 100%;
 	justify-content: center;
-	
+	position: relative;
 }
 .game {
 	display: flex;
@@ -99,16 +163,34 @@ function handleResize() {
 	width: 100%;
 	height: 100%;
 	justify-content: center;
-/* 	align-items: center; */
+	align-items: flex-end;
+	padding-right: 20px;
 	z-index: 20;
 }
-
 #hello .hero {
 	display: flex;
 	flex-direction: column;
-	/* display: grid;
-	grid-template-columns: repeat(12, minmax(0, 1fr)); */
 	margin: 0rem;
+}
+
+/* profile picture, floats to the left of the title */
+
+#profile-pic {
+  position: absolute;
+  left: -210px;
+  top: 80px;
+  width: 240px;
+  height: 240px;
+  z-index: 30;
+}
+
+#profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #43D9AD;
+  box-shadow: 0 0 30px rgba(67, 217, 173, 0.6);
 }
 
 
@@ -137,6 +219,7 @@ function handleResize() {
 
 .head {
   padding-bottom: 3rem;
+  padding-left: 50px;
 }
 
 #info {
@@ -228,14 +311,8 @@ function handleResize() {
     padding-right: 2px;
 }
 
-.anim-typewriter{
-    animation: typewriter 3.5s steps(40) 1s 1 normal both,
-    blinkTextCursor 800ms steps(40) infinite normal;
-}
-
-@keyframes typewriter{
-  from{width: 0;}
-  to{width: 100%;}
+.line-1-js {
+    animation: blinkTextCursor 800ms steps(2) infinite normal;
 }
 
 @keyframes blinkTextCursor{
@@ -243,12 +320,12 @@ function handleResize() {
   to{border-right-color: transparent;}
 }
 
-
 /* mobile */
 @media (max-width: 768px) {
 
 	#hello {
 		padding-left: 0;
+		padding-right: 0;
 	}
 
 	#hello .hero {
@@ -259,6 +336,11 @@ function handleResize() {
 	}
 	.head {
 		padding-top: 4rem; /* 40px */
+		padding-left: 0;
+	}
+
+	#hello .head h1 {
+		font-size: 42px;
 	}
 
 	#hello .head h2, #hello .head .diple {
@@ -270,12 +352,22 @@ function handleResize() {
 		display: none;
 	}
 
+	#info {
+		padding-left: 0;
+	}
+
+	.code {
+		font-size: 12px;
+		word-break: break-all;
+	}
+
 }
 
 /* tablet */
 @media (min-width: 768px) and (max-width: 1024px) {
 	#hello {
 		padding-left: 0;
+		padding-right: 0;
 	}
 	#hello .hero {
 		display: flex;
@@ -285,6 +377,11 @@ function handleResize() {
 	}
 	.head {
 		padding-top: 4rem; /* 40px */
+		padding-left: 0;
+	}
+
+	#info {
+		padding-left: 0;
 	}
 
 }
@@ -292,7 +389,15 @@ function handleResize() {
 @media (min-width: 1024px) and (max-width: 1320px) {
 	#hello {
 		padding-left: 135px;
+		padding-right: 40px;
 	}
+
+  #profile-pic {
+    width: 170px;
+    height: 170px;
+    left: -190px;
+    top: 30px;
+  }
 }
 
 
@@ -327,10 +432,10 @@ function handleResize() {
 @media (min-width: 1920px){
 	#hello {
 		padding-left: 310px;
+		padding-right: 80px;
 	}
 	#hello .head h1 {
 		font-size: 62px;
 	}
 }
-
 </style>

@@ -11,7 +11,7 @@
       <span class="font-fira_regular text-white text-sm">projects</span>
     </div>
 
-    <div v-if="showFilters" id="filter-menu"
+    <div v-if="showFilters || isDesktop" id="filter-menu"
       class="w-full flex-col border-right font-fira_regular text-menu-text lg:flex">
       <!-- title -->
       <div id="section-content-title" class="hidden lg:flex items-center min-w-full">
@@ -24,7 +24,7 @@
 
         <div v-for="tech in techs" :key="tech" class="flex items-center py-2">
           <input type="checkbox" :id="tech" @click="filterProjects(tech)">
-          <img :id="'icon-tech-' + tech" :src="'/icons/techs/' + tech + '.svg'" alt="" class="tech-icon w-5 h-5 mx-4">
+          <div :id="'icon-tech-' + tech" :style="{ '--icon-url': 'url(/icons/techs/' + tech + '.svg)' }" class="tech-icon w-5 h-5 mx-4"></div>
           <label :for="tech" :id="'title-tech-' + tech">{{ tech }}</label>
         </div>
       </nav>
@@ -67,7 +67,7 @@
           </span>
         </div>
 
-        <project-card v-for="(project, index) in projects" :index="index" :project="project" />
+        <project-card v-for="(project, index) in projects" :key="project.title" :index="index" :project="project" />
 
       </div>
     </div>
@@ -75,15 +75,29 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import DevConfig from '~/developer.json';
 
 const config = ref(DevConfig)
 
-const techs = ['React', 'HTML', 'CSS', 'Vue', 'Angular', 'Gatsby', 'Flutter']
+const techs = ['angular', 'html', 'css', 'javascript', 'flutter', 'python', 'springboot', 'odoo', 'talend', 'table']
 const filters = ref(['all'])
-const showFilters = ref(true)
-const projects = ref(config.value.projects)
+const showFilters = ref(false)
+const isDesktop = ref(true)
+const projects = ref(Object.values(config.value.projects))
+
+function checkDesktop() {
+  isDesktop.value = window.innerWidth >= 1024
+}
+
+onMounted(() => {
+  checkDesktop()
+  window.addEventListener('resize', checkDesktop)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', checkDesktop)
+})
 
 function filterProjects(tech) {
   document.getElementById('icon-tech-' + tech).classList.toggle('active')
@@ -97,7 +111,7 @@ function filterProjects(tech) {
     filters.value = filters.value.filter((item) => item !== tech)
     filters.value.length === 0 ? filters.value.push('all') : null
   }
-  filters.value[0] == 'all' ? projects.value = config.value.projects : projects.value = filterProjectsBy(filters.value)
+  filters.value[0] == 'all' ? projects.value = Object.values(config.value.projects) : projects.value = filterProjectsBy(filters.value)
 
   if (projects.value.length === 0) {
     document.getElementById('projects-case').classList.remove('grid')
@@ -128,10 +142,28 @@ function filterProjectsBy(filters) {
 
 .tech-icon {
   opacity: 0.4;
+  background-color: #4D5963;
+  -webkit-mask-image: var(--icon-url);
+  mask-image: var(--icon-url);
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
 }
 
 .tech-icon.active {
   opacity: 1;
+  background-color: #4D5963;
+  -webkit-mask-image: var(--icon-url);
+  mask-image: var(--icon-url);
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
 }
 
 #title-tech.active {
@@ -209,17 +241,6 @@ input[type="checkbox"]:focus {
   #projects-case {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     padding: 50px 80px 40px;
-    /* padding: 100px 100px 40px; */
-  }
-}
-
-@keyframes animateToBottom {
-  from {
-    transform: translate3d(0, -200px, 0);
-  }
-
-  to {
-    transform: translate3d(0, 10px, 0);
   }
 }
 </style>

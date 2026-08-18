@@ -158,13 +158,68 @@
         <div id="gists-content" class="flex">
         
           <div id="gists" class="flex flex-col lg:px-6 lg:py-4 w-full overflow-hidden">
-            <!-- title -->
-            <h3 class="text-white lg:text-menu-text mb-4 text-sm">// Code snippet showcase:</h3>
 
-            <div class="flex flex-col overflow-scroll">
-              <!-- snippets -->
-              <GistSnippet data-aos="fade-down" v-for="(gist, key) in config.gists" :key="key" :id="gist" />
-            </div>
+            <template v-if="folder === 'interests'">
+              <!-- title -->
+              <h3 class="text-white lg:text-menu-text mb-4 text-sm">// Showcase:</h3>
+              <FilmStrip :items="config.about.sections[currentSection]?.info[folder].showcase" />
+            </template>
+
+            <template v-else-if="folder === 'education'">
+              <!-- title -->
+              <h3 class="text-white lg:text-menu-text mb-4 text-sm">// Souvenirs:</h3>
+              <PolaroidStack :images="config.about.sections[currentSection]?.info[folder].showcase" />
+            </template>
+
+            <template v-else>
+              <!-- title -->
+              <h3 class="text-white lg:text-menu-text mb-4 text-sm">// Recommendations:</h3>
+
+              <div class="flex flex-col overflow-scroll">
+                <div
+                  v-for="pos in [0, 1]"
+                  :key="pos"
+                  class="recommendation-slot mb-5"
+                >
+                  <transition name="rec-fade" mode="out-in">
+                    <div
+                      v-if="visiblePair[pos]"
+                      :key="visiblePair[pos].name"
+                      class="recommendation-card"
+                    >
+                      <!-- head info, styled like the old gist head -->
+                      <div class="flex justify-between my-2">
+                        <div class="flex">
+                          <img
+                            v-if="visiblePair[pos].image"
+                            :src="visiblePair[pos].image"
+                            alt=""
+                            class="w-8 h-8 rounded-full mr-2 object-cover"
+                          />
+                          <div v-else class="avatar-placeholder w-8 h-8 rounded-full mr-2 flex items-center justify-center">
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-menu-text">
+                              <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.5c-3.3 0-9.8 1.6-9.8 4.9v2.4h19.6v-2.4c0-3.3-6.5-4.9-9.8-4.9z"/>
+                            </svg>
+                          </div>
+                          <div class="flex flex-col">
+                            <span class="font-fira_bold text-purple-text text-xs pb-1">
+                              @{{ visiblePair[pos].name }}
+                            </span>
+                            <p class="font-fira_retina text-xs text-menu-text">{{ visiblePair[pos].title }}</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- code-style comment block, syntax-highlighted like a real snippet -->
+                      <div class="snippet-container">
+                        <pre><code><span class="hl-comment">// review</span><br><span class="hl-keyword">const</span> <span class="hl-var">feedback</span> <span class="hl-op">=</span> <span class="hl-string">"{{ visiblePair[pos].comment }}"</span><span class="hl-op">;</span></code></pre>
+                      </div>
+                    </div>
+                  </transition>
+                </div>
+              </div>
+            </template>
+
           </div>
 
           <!-- scroll bar -->
@@ -264,6 +319,94 @@
   transition: 0.1s;
 }
 
+/* recommendations, styled like the original code-snippet showcase */
+.recommendation-slot {
+  min-height: 140px;
+}
+
+@media (max-width: 768px) {
+  .recommendation-slot {
+    min-height: 100px;
+  }
+
+  .snippet-container {
+    font-size: 11px;
+  }
+
+  .snippet-container pre {
+    padding: 1em;
+  }
+
+  .avatar-placeholder {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+  }
+}
+
+.avatar-placeholder {
+  background: linear-gradient(135deg, #43D9AD, #4D5BCE);
+}
+
+.snippet-container {
+    background-color: #011221;
+    padding: 5px;
+    border-radius: 15px;
+    border: 1px solid #1E2D3D;
+    font-size: 12px;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    max-height: 220px;
+}
+
+.snippet-container pre {
+    margin: 0;
+    overflow: hidden;
+    width: 100%;
+    max-height: 220px;
+    padding: 1.5em;
+}
+
+.snippet-container code {
+    white-space: pre-wrap;
+    max-height: 220px;
+    width: 100%;
+    overflow: hidden;
+    line-height: 1.8;
+    font-family: 'Fira Code Retina', monospace;
+}
+
+.snippet-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* syntax highlight colors, matching the site's existing hljs palette */
+.hl-comment {
+  color: #8b949e;
+}
+
+.hl-keyword {
+  color: #ff7b72;
+}
+
+.hl-var {
+  color: #79c0ff;
+}
+
+.hl-op {
+  color: #c9d1d9;
+}
+
+.hl-string {
+  color: #a5d6ff;
+}
+
+.rec-fade-enter-active, .rec-fade-leave-active {
+  transition: opacity 0.6s ease;
+}
+.rec-fade-enter-from, .rec-fade-leave-to {
+  opacity: 0;
+}
+
 #section-content #contacts {
   padding: 0px 25px;
 }
@@ -278,6 +421,8 @@ export default {
       currentSection: 'personal-info',
       folder: 'bio',
       loading: true,
+      currentPairIndex: 0,
+      recommendationInterval: null,
     }
   },
   /**
@@ -298,6 +443,14 @@ export default {
     },
     isOpen() {
       return folder => this.folder === folder;
+    },
+    totalPairs() {
+      return Math.ceil((this.config.recommendations?.length || 0) / 2)
+    },
+    visiblePair() {
+      const list = this.config.recommendations || []
+      const start = this.currentPairIndex * 2
+      return [list[start] || null, list[start + 1] || null]
     },
   },
   methods: {
@@ -328,6 +481,12 @@ export default {
   },
   mounted(){
     this.loading = false
+    this.recommendationInterval = setInterval(() => {
+      this.currentPairIndex = (this.currentPairIndex + 1) % this.totalPairs
+    }, 9000)
+  },
+  beforeUnmount() {
+    clearInterval(this.recommendationInterval)
   }
 }
 </script>
