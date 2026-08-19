@@ -7,8 +7,13 @@
 
 		<section class="hero">
 
-			<!-- profile picture, floats to the left of the title -->
+			<!-- profile picture, floats to the left of the title on desktop -->
 			<div id="profile-pic" v-if="!isMobile">
+				<img :src="currentProfileImage" alt="profile photo" />
+			</div>
+
+			<!-- profile picture, shown above the name on mobile -->
+			<div id="profile-pic-mobile" v-if="isMobile">
 				<img :src="currentProfileImage" alt="profile photo" />
 			</div>
 		
@@ -174,7 +179,6 @@ function handleResize() {
 }
 
 /* profile picture, floats to the left of the title */
-
 #profile-pic {
   position: absolute;
   left: -210px;
@@ -193,6 +197,10 @@ function handleResize() {
   box-shadow: 0 0 30px rgba(67, 217, 173, 0.6);
 }
 
+/* mobile-only profile picture, shown above the name */
+#profile-pic-mobile {
+  display: none;
+}
 
 #hello .head span {
   font-size: 18px;
@@ -334,9 +342,27 @@ function handleResize() {
 		justify-content: space-between;
 		margin: 1.75rem; /* 28px */
 	}
+
+	#profile-pic-mobile {
+		display: block;
+		width: 130px;
+		height: 130px;
+		margin: 0 auto 24px;
+	}
+
+	#profile-pic-mobile img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 50%;
+		border: 3px solid #43D9AD;
+		box-shadow: 0 0 25px rgba(67, 217, 173, 0.5);
+	}
+
 	.head {
-		padding-top: 4rem; /* 40px */
+		padding-top: 1rem;
 		padding-left: 0;
+		text-align: center;
 	}
 
 	#hello .head h1 {
@@ -375,9 +401,27 @@ function handleResize() {
 		justify-content: center;
 		margin: 1.75rem; /* 28px */
 	}
+
+	#profile-pic-mobile {
+		display: block;
+		width: 150px;
+		height: 150px;
+		margin: 0 auto 24px;
+	}
+
+	#profile-pic-mobile img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 50%;
+		border: 3px solid #43D9AD;
+		box-shadow: 0 0 25px rgba(67, 217, 173, 0.5);
+	}
+
 	.head {
-		padding-top: 4rem; /* 40px */
+		padding-top: 1rem; /* 40px */
 		padding-left: 0;
+		text-align: center;
 	}
 
 	#info {
