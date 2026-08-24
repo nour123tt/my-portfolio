@@ -57,7 +57,7 @@
       <!-- mobile -->
       <div id="section-content" class="lg:hidden w-full font-fira_regular">
 
-        <div v-for="section in config.about.sections" :key="section.title">
+        <div v-for="section in mobileSections" :key="section.title">
           
           <!-- section title (mobile) -->
           <div :key="section.title" :src="section.icon" id="section-content-title" class="flex lg:hidden mb-1" @click="focusCurrentSection(section)">
@@ -434,6 +434,13 @@ export default {
     }
   },
   computed: {
+    // mobile-only section list, hides professional-info's experience folder from the mobile file-tree
+    // without touching the desktop sidebar icons
+    mobileSections() {
+      return Object.values(this.config.about.sections).filter(
+        section => section.title !== 'professional-info'
+      )
+    },
     // Set active class to current page link
     isActive() {
       return folder => this.folder === folder;

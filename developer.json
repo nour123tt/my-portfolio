@@ -2,7 +2,7 @@
     "name": "Mhatli Nour",
     "logo_name": "mhatli-nour",
     "role": ["Junior Software Engineer", "Future Data Engineer"],
-"experience": [
+    "experience": [
         {
             "title": "Stage PFE — B And Smile Tech",
             "period": "Mar - Juil 2026",
@@ -64,7 +64,8 @@
             "tech": ["python"],
             "private": true
         }
-    ],        "competences": {
+    ],
+    "competences": {
         "Langages de programmation": ["Python", "Java", "C", "C++", "Dart"],
         "Programmation Web": ["HTML", "CSS", "JavaScript"],
         "Frameworks": ["Angular", "Node.js", "Spring Boot"],
@@ -74,10 +75,10 @@
         "Méthodologies": ["Agile/Scrum", "UML"],
         "Gestion de projets": ["GitHub"]
     },
-      "certificates": [
+    "certificates": [
         { "platform": "Coursera", "title": "Introduction to Frontend and Backend Development", "image": "/images/Certificates/Introduction to frontend.jpg" },
         { "platform": "Coursera", "title": "Crash Course on Python", "image": "/images/Certificates/Crash Course on Python.jpg" },
-               { "platform": "Coursera", "title": "How to Create a Jira SCRUM Project", "image": "/images/Certificates/how to create a jira SCRUM project.jpeg" },
+        { "platform": "Coursera", "title": "How to Create a Jira SCRUM Project", "image": "/images/Certificates/how to create a jira SCRUM project.jpeg" },
         { "platform": "Microsoft", "title": "Certification Word et Excel", "image": "/images/Certificates/MOS-Office-Specialist-Badges.webp" },
         { "platform": "NVIDIA", "title": "Building RAG Agents with LLMs", "image": "/images/Certificates/Building RAG Agents with LLMs.jpg" },
         { "platform": "NVIDIA", "title": "Building Transformer-Based Natural Language Processing Applications", "image": "/images/Certificates/Building Transformer-Based Natural Language Processing Applications.jpg" },
@@ -86,166 +87,7 @@
         { "platform": "365 Data Science", "title": "Intro to AI", "image": "/images/Certificates/ai.jpg" },
         { "platform": "Udemy", "title": "Software Architecture", "image": "/images/Certificates/software architecture.jpg" },
         { "platform": "Udemy", "title": "Web Performance", "image": "/images/Certificates/web performance.jpg" },
-               { "platform": "IT Specialist", "title": "Python Certification", "image": "/images/Certificates/Python certification.jpg" }
-    ],
-    "about": {
-        "sections": {
-            "professional-info": {
-                "title": "professional-info",
-                "icon": "icons/info-professional.svg",
-                "info": {
-                    "experience": {
-                        "title": "experience",
-                        "description": "<br>Over the past 5 years, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-                    },
-                    "hard-skills": {
-                        "title": "hard-skills",
-                        "description": "<br>As a front-end developer, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-                    },
-                    "soft-skills": {
-                        "title": "soft-skills",
-                        "description": "<br>I bring more than Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br><br> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-                    }
-                }
-            },
-            "personal-info": {
-                "title": "personal-info",
-                "icon": "icons/info-personal.svg",
-                "info": { 
-                    "bio": {
-                        "title": "bio",
-                        "description": "<br>Tout au long de mes <span style='color:#43D9AD'>trois années de Licence</span>, j'ai acquis une expérience concrète dans les <span style='color:#79c0ff'>structures de données</span>, le <span style='color:#79c0ff'>développement logiciel</span>, l'<span style='color:#79c0ff'>architecture et la conception des systèmes</span>, ainsi que le travail en équipe en suivant des méthodologies comme <span style='color:#E99287'>Agile</span> et <span style='color:#E99287'>Scrum</span>. <br><br>Cela vient principalement de <span style='color:#79c0ff'>deux stages</span> chez <span style='color:#43D9AD'>B And Smile Tech</span>, une entreprise d'orthodontie numérique, où j'ai travaillé sur le développement full-stack avec <span style='color:#6172ff'>Angular</span>, <span style='color:#6172ff'>Spring Boot</span> et <span style='color:#6172ff'>Python</span>, ainsi que d'un stage d'été à la <span style='color:#43D9AD'>STB Bank</span>. <br><br>Aujourd'hui, je suis heureuse d'avoir obtenu mon <span style='color:#FEA55F'>diplôme</span>, et je travaille actuellement en tant que <span style='color:#FEA55F'>développeuse freelance</span> pour continuer à perfectionner mes compétences, tout en cherchant mon <span style='color:#4D5BCE'>prochain chapitre</span> dans le monde de l'entreprise, <strong style='color:#43D9AD'>prête à montrer mes compétences et à apprendre des meilleurs.</strong>"
-                    },
-                    "interests": {
-                        "title": "interests",
-                        "description": "<br>Je m'intéresse particulièrement aux <span style='color:#79c0ff'>données</span> et aux <span style='color:#79c0ff'>modèles d'IA</span>, et j'aime explorer comment ils peuvent être appliqués pour résoudre des problèmes concrets. <br><br>En dehors de la tech, j'adore <span style='color:#E99287'>lire</span>, <span style='color:#E99287'>jouer aux jeux vidéo</span> et <span style='color:#E99287'>regarder des films</span>, et j'ai une réelle passion pour la <span style='color:#43D9AD'>culture asiatique</span>. J'ai été membre du <span style='color:#6172ff'>Tunisian Asian Culture Club</span>, où j'ai aidé à organiser des événements comme <span style='color:#FEA55F'>Banzai</span>, <span style='color:#FEA55F'>Geek Land</span> et <span style='color:#FEA55F'>Comic Con</span>.",
-                        "showcase": [
-                            {
-                                "image": "/images/interests/games.jpg",
-                                "label": "gaming"
-                            },
-                            {
-                                "image": "/images/interests/events.jpg",
-                                "label": "conventions"
-                            },
-                            {
-                                "image": "/images/interests/big data.png",
-                                "label": "big-data"
-                            },
-                            {
-                                "image": "/images/interests/books.jpg",
-                                "label": "reading"
-                            },
-                            {
-                                "image": "/images/interests/database.jpg",
-                                "label": "data"
-                            }
-                        ]
-                    },
-                    "education": {
-                        "title": "education",
-                        "description": "<br>Mon parcours éducatif m'a menée d'un <span style='color:#79c0ff'>baccalauréat général en Informatique</span> à un <span style='color:#43D9AD'>diplôme spécialisé en Génie Logiciel</span>, où j'ai construit les bases techniques de tout ce que je fais aujourd'hui. <br><br><span style='color:#8b949e'>// lycée</span><br><span style='color:#ff7b72'>const</span> <span style='color:#79c0ff'>école</span> <span style='color:#c9d1d9'>=</span> <span style='color:#a5d6ff'>\"Lycée Mourouj 4\"</span><span style='color:#c9d1d9'>;</span><br><span style='color:#ff7b72'>const</span> <span style='color:#79c0ff'>diplôme</span> <span style='color:#c9d1d9'>=</span> <span style='color:#a5d6ff'>\"Baccalauréat en Informatique\"</span><span style='color:#c9d1d9'>;</span><br><span style='color:#ff7b72'>const</span> <span style='color:#79c0ff'>période</span> <span style='color:#c9d1d9'>=</span> <span style='color:#a5d6ff'>\"2022 : 2023\"</span><span style='color:#c9d1d9'>;</span><br><span style='color:#ff7b72'>const</span> <span style='color:#79c0ff'>description</span> <span style='color:#c9d1d9'>=</span> <span style='color:#a5d6ff'>\"C'est là que j'ai été introduite pour la première fois à la programmation et aux fondamentaux de l'informatique, ce qui m'a poussée à approfondir le génie logiciel.\"</span><span style='color:#c9d1d9'>;</span> <br><br><span style='color:#8b949e'>// université</span><br><span style='color:#ff7b72'>const</span> <span style='color:#79c0ff'>école</span> <span style='color:#c9d1d9'>=</span> <span style='color:#a5d6ff'>\"Polytech International\"</span><span style='color:#c9d1d9'>;</span><br><span style='color:#ff7b72'>const</span> <span style='color:#79c0ff'>diplôme</span> <span style='color:#c9d1d9'>=</span> <span style='color:#a5d6ff'>\"Licence en Informatique, Génie Logiciel\"</span><span style='color:#c9d1d9'>;</span><br><span style='color:#ff7b72'>const</span> <span style='color:#79c0ff'>période</span> <span style='color:#c9d1d9'>=</span> <span style='color:#a5d6ff'>\"2023 : 2026\"</span><span style='color:#c9d1d9'>;</span><br><span style='color:#ff7b72'>const</span> <span style='color:#79c0ff'>description</span> <span style='color:#c9d1d9'>=</span> <span style='color:#a5d6ff'>\"Trois années de cours pratiques et de projets couvrant le développement logiciel, les structures de données, l'architecture des systèmes, et des méthodologies de travail en équipe comme Agile et Scrum.\"</span><span style='color:#c9d1d9'>;</span>",
-                        "files": {
-                            "high-school": "Lycée Mourouj 4",
-                            "university": "Polytech International"
-                        },
-                        "showcase": [
-                            "/images/education/photo1.jpg",
-                            "/images/education/photo3.jpg",
-                            "/images/education/photo4.jpg",
-                            "/images/education/photo8.jpg",
-                            "/images/education/uni.jpg",
-                            "/images/education/photo7.jpg"
-                        ]
-                    }
-                }
-            },
-            "hobbies-info": {
-                "title": "hobbies-info",
-                "icon": "icons/info-hobbies.svg",
-                "info": {
-                    "sports": {
-                        "title": "sports",
-                        "description": "<br>I am an avid sports enthusiast and lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-                    },
-                    "favorite-games": {
-                        "title": "favorite-games",
-                        "description": "<br>I am a passionate gamer with Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br><br> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    }
-                }
-            }
-        }
-    },
-       "contacts": {
-        "direct": {
-            "title": "contacts",
-            "sources": {
-                "email": "m.nour23165@pi.tn",
-                "phone": "+21658651535"
-            }
-        },
-        "social": {
-            "github": {
-                "title": "Github profile",
-                "url": "https://github.com/",
-                "user": "nour123tt"
-            },
-            "facebook": {
-                "title": "Facebook profile",
-                "url": "https://www.facebook.com/",
-                "user": "mhatli.nour"
-            },
-            "linkedin": {
-                "title": "LinkedIn profile",
-                "url": "https://www.linkedin.com/in/",
-                "user": "mhatlinour"
-            }
-        },
-        "find_me_also_in": {
-            "title": "find-me-also-in",
-            "sources": {
-                "facebook": {
-                    "title": "Facebook profile",
-                    "url": "https://www.facebook.com/",
-                    "user": "mhatli.nour"
-                },
-                "linkedin": {
-                    "title": "LinkedIn profile",
-                    "url": "https://www.linkedin.com/in/",
-                    "user": "mhatlinour"
-                }
-            }
-        }
-    },
-    "gists": {
-        "1": "83861a67e377633ee8368df01ee3a355",
-        "2": "694c1f32332788a2ac7f37b09e5aa40e"
-    },
-    "recommendations": [
-        {
-            "name": "Marouane Ben Haj Ayech",
-            "title": "Chef de département Génie Logiciel & Enseignant, Polytechnique Internationale",
-            "comment": "Une étudiante travailleuse et l'une des meilleures que j'ai eues. Nour essaie toujours de s'attaquer à de nouvelles choses, même avant de les avoir apprises. Sa discipline et sa concentration font toute la différence.",
-            "image": "/images/Marouane Ben Haj Ayech.jpg"
-        },
-        {
-            "name": "Iheb Matoussi",
-            "title": "Ingénieur BI & BigData Senior, Orange",
-            "comment": "J'ai enseigné à Nour et c'est une étudiante extrêmement concentrée, parmi les meilleures de sa classe. Je suis certain qu'elle réussira partout où elle ira. Fortement recommandée.",
-            "image": "/images/Iheb Matoussi.jpg"
-        },
-        {
-            "name": "Yassin Ghariani",
-            "title": "Software Engineer, Fondateur du JUG Tunisia",
-            "comment": "J'ai eu la chance de croiser Nour durant son stage PFE. Son éthique de travail et son organisation m'ont vraiment impressionné, et le projet qu'elle a réalisé était réellement impressionnant. Je lui vois un avenir très prometteur.",
-            "image": "/images/Yassin Ghariani.png"
-        },
-        {
-            "name": "Sarra Mansour",
-            "title": "Ingénieure logiciels, B and Smile",
-            "comment": "Grande discipline et éthique de travail, elle livre toujours son travail à temps. J'ai aussi été vraiment impressionnée par tout ce qu'elle a accompli durant les deux années où elle a travaillé avec nous.",
-            "image": null
-        }
+        { "platform": "IT Specialist", "title": "Python Certification", "image": "/images/Certificates/Python certification.jpg" }
     ],
     "quiz": [
         {
@@ -319,6 +161,143 @@
             "options": ["Un système ERP", "Un CRM", "Un outil de facturation"],
             "answer": "Un système ERP",
             "hint": "Elle a personnalisé des modules directement dans Odoo Studio."
+        }
+    ],
+    "about": {
+        "sections": {
+            "professional-info": {
+                "title": "professional-info",
+                "icon": "icons/info-professional.svg",
+                "info": {
+                    "experience": {
+                        "title": "experience",
+                        "description": "<br>Over the past 5 years, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+                    }
+                }
+            },
+            "personal-info": {
+                "title": "personal-info",
+                "icon": "icons/info-personal.svg",
+                "info": { 
+                    "bio": {
+                        "title": "bio",
+                        "description": "<br>Tout au long de mes <span style='color:#43D9AD'>trois années de Licence</span>, j'ai acquis une expérience concrète dans les <span style='color:#79c0ff'>structures de données</span>, le <span style='color:#79c0ff'>développement logiciel</span>, l'<span style='color:#79c0ff'>architecture et la conception des systèmes</span>, ainsi que le travail en équipe en suivant des méthodologies comme <span style='color:#E99287'>Agile</span> et <span style='color:#E99287'>Scrum</span>. <br><br>Cela vient principalement de <span style='color:#79c0ff'>deux stages</span> chez <span style='color:#43D9AD'>B And Smile Tech</span>, une entreprise d'orthodontie numérique, où j'ai travaillé sur le développement full-stack avec <span style='color:#6172ff'>Angular</span>, <span style='color:#6172ff'>Spring Boot</span> et <span style='color:#6172ff'>Python</span>, ainsi que d'un stage d'été à la <span style='color:#43D9AD'>STB Bank</span>. <br><br>Aujourd'hui, je suis heureuse d'avoir obtenu mon <span style='color:#FEA55F'>diplôme</span>, et je travaille actuellement en tant que <span style='color:#FEA55F'>développeuse freelance</span> pour continuer à perfectionner mes compétences, tout en cherchant mon <span style='color:#4D5BCE'>prochain chapitre</span> dans le monde de l'entreprise, <strong style='color:#43D9AD'>prête à montrer mes compétences et à apprendre des meilleurs.</strong>"
+                    },
+                    "interests": {
+                        "title": "interests",
+                        "description": "<br>Je m'intéresse particulièrement aux <span style='color:#79c0ff'>données</span> et aux <span style='color:#79c0ff'>modèles d'IA</span>, et j'aime explorer comment ils peuvent être appliqués pour résoudre des problèmes concrets. <br><br>En dehors de la tech, j'adore <span style='color:#E99287'>lire</span>, <span style='color:#E99287'>jouer aux jeux vidéo</span> et <span style='color:#E99287'>regarder des films</span>, et j'ai une réelle passion pour la <span style='color:#43D9AD'>culture asiatique</span>. J'ai été membre du <span style='color:#6172ff'>Tunisian Asian Culture Club</span>, où j'ai aidé à organiser des événements comme <span style='color:#FEA55F'>Banzai</span>, <span style='color:#FEA55F'>Geek Land</span> et <span style='color:#FEA55F'>Comic Con</span>.",
+                        "showcase": [
+                            {
+                                "image": "/images/interests/games.jpg",
+                                "label": "gaming"
+                            },
+                            {
+                                "image": "/images/interests/events.jpg",
+                                "label": "conventions"
+                            },
+                            {
+                                "image": "/images/interests/big data.png",
+                                "label": "big-data"
+                            },
+                            {
+                                "image": "/images/interests/books.jpg",
+                                "label": "reading"
+                            },
+                            {
+                                "image": "/images/interests/database.jpg",
+                                "label": "data"
+                            }
+                        ]
+                    },
+                    "education": {
+                        "title": "education",
+                        "description": "<br>Mon parcours éducatif m'a menée d'un <span style='color:#79c0ff'>baccalauréat général en Informatique</span> à un <span style='color:#43D9AD'>diplôme spécialisé en Génie Logiciel</span>, où j'ai construit les bases techniques de tout ce que je fais aujourd'hui. <br><br><span style='color:#8b949e'>// lycée</span><br><span style='color:#ff7b72'>const</span> <span style='color:#79c0ff'>école</span> <span style='color:#c9d1d9'>=</span> <span style='color:#a5d6ff'>\"Lycée Mourouj 4\"</span><span style='color:#c9d1d9'>;</span><br><span style='color:#ff7b72'>const</span> <span style='color:#79c0ff'>diplôme</span> <span style='color:#c9d1d9'>=</span> <span style='color:#a5d6ff'>\"Baccalauréat en Informatique\"</span><span style='color:#c9d1d9'>;</span><br><span style='color:#ff7b72'>const</span> <span style='color:#79c0ff'>période</span> <span style='color:#c9d1d9'>=</span> <span style='color:#a5d6ff'>\"2022 : 2023\"</span><span style='color:#c9d1d9'>;</span><br><span style='color:#ff7b72'>const</span> <span style='color:#79c0ff'>description</span> <span style='color:#c9d1d9'>=</span> <span style='color:#a5d6ff'>\"C'est là que j'ai été introduite pour la première fois à la programmation et aux fondamentaux de l'informatique, ce qui m'a poussée à approfondir le génie logiciel.\"</span><span style='color:#c9d1d9'>;</span> <br><br><span style='color:#8b949e'>// université</span><br><span style='color:#ff7b72'>const</span> <span style='color:#79c0ff'>école</span> <span style='color:#c9d1d9'>=</span> <span style='color:#a5d6ff'>\"Polytech International\"</span><span style='color:#c9d1d9'>;</span><br><span style='color:#ff7b72'>const</span> <span style='color:#79c0ff'>diplôme</span> <span style='color:#c9d1d9'>=</span> <span style='color:#a5d6ff'>\"Licence en Informatique, Génie Logiciel\"</span><span style='color:#c9d1d9'>;</span><br><span style='color:#ff7b72'>const</span> <span style='color:#79c0ff'>période</span> <span style='color:#c9d1d9'>=</span> <span style='color:#a5d6ff'>\"2023 : 2026\"</span><span style='color:#c9d1d9'>;</span><br><span style='color:#ff7b72'>const</span> <span style='color:#79c0ff'>description</span> <span style='color:#c9d1d9'>=</span> <span style='color:#a5d6ff'>\"Trois années de cours pratiques et de projets couvrant le développement logiciel, les structures de données, l'architecture des systèmes, et des méthodologies de travail en équipe comme Agile et Scrum.\"</span><span style='color:#c9d1d9'>;</span>",
+                        "files": {
+                            "high-school": "Lycée Mourouj 4",
+                            "university": "Polytech International"
+                        },
+                        "showcase": [
+                            "/images/education/photo1.jpg",
+                            "/images/education/photo3.jpg",
+                            "/images/education/photo4.jpg",
+                            "/images/education/photo8.jpg",
+                            "/images/education/uni.jpg",
+                            "/images/education/photo7.jpg"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "contacts": {
+        "direct": {
+            "title": "contacts",
+            "sources": {
+                "email": "m.nour23165@pi.tn",
+                "phone": "+21658651535"
+            }
+        },
+        "social": {
+            "github": {
+                "title": "Github profile",
+                "url": "https://github.com/",
+                "user": "nour123tt"
+            },
+            "facebook": {
+                "title": "Facebook profile",
+                "url": "https://www.facebook.com/",
+                "user": "mhatli.nour"
+            },
+            "linkedin": {
+                "title": "LinkedIn profile",
+                "url": "https://www.linkedin.com/in/",
+                "user": "mhatlinour"
+            }
+        },
+        "find_me_also_in": {
+            "title": "find-me-also-in",
+            "sources": {
+                "facebook": {
+                    "title": "Facebook profile",
+                    "url": "https://www.facebook.com/",
+                    "user": "mhatli.nour"
+                },
+                "linkedin": {
+                    "title": "LinkedIn profile",
+                    "url": "https://www.linkedin.com/in/",
+                    "user": "mhatlinour"
+                }
+            }
+        }
+    },
+    "gists": {
+        "1": "83861a67e377633ee8368df01ee3a355",
+        "2": "694c1f32332788a2ac7f37b09e5aa40e"
+    },
+    "recommendations": [
+        {
+            "name": "Marouane Ben Haj Ayech",
+            "title": "Chef de département Génie Logiciel & Enseignant, Polytechnique Internationale",
+            "comment": "Une étudiante travailleuse et l'une des meilleures que j'ai eues. Nour essaie toujours de s'attaquer à de nouvelles choses, même avant de les avoir apprises. Sa discipline et sa concentration font toute la différence.",
+            "image": "/images/Marouane Ben Haj Ayech.jpg"
+        },
+        {
+            "name": "Iheb Matoussi",
+            "title": "Ingénieur BI & BigData Senior, Orange",
+            "comment": "J'ai enseigné à Nour et c'est une étudiante extrêmement concentrée, parmi les meilleures de sa classe. Je suis certain qu'elle réussira partout où elle ira. Fortement recommandée.",
+            "image": "/images/Iheb Matoussi.jpg"
+        },
+        {
+            "name": "Yassin Ghariani",
+            "title": "Software Engineer, Fondateur du JUG Tunisia",
+            "comment": "J'ai eu la chance de croiser Nour durant son stage PFE. Son éthique de travail et son organisation m'ont vraiment impressionné, et le projet qu'elle a réalisé était réellement impressionnant. Je lui vois un avenir très prometteur.",
+            "image": "/images/Yassin Ghariani.png"
+        },
+        {
+            "name": "Sarra Mansour",
+            "title": "Ingénieure logiciels, B and Smile",
+            "comment": "Grande discipline et éthique de travail, elle livre toujours son travail à temps. J'ai aussi été vraiment impressionnée par tout ce qu'elle a accompli durant les deux années où elle a travaillé avec nous.",
+            "image": null
         }
     ],
     "projects": {
