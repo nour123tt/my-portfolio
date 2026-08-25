@@ -1,86 +1,92 @@
 <h1 align="center">
-  developer-portfolio-v2
+  Mhatli Nour — Portfolio
 </h1>
 <p align="center">
-  The first open source version of <a href="https://www.figma.com/community/file/1100794861710979147" target="_blank"> Portfolio for Developers Concept V.2</a>, designed by <a href="https://www.behance.net/darelova" target="_blank">@darelova</a> and developed by <a href="https://github.com/alexdeploy">@alexdeploy</a>. Built with <a href="https://nuxt.com/" target="_blank">Nuxt.js 3.0</a> and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify</a>.
+  Portfolio personnel de <b>Mhatli Nour</b>, développeuse logicielle full-stack (Angular, Spring Boot, Python). Construit avec <a href="https://nuxt.com/" target="_blank">Nuxt 3</a> et déployé sur <a href="https://vercel.com/" target="_blank">Vercel</a>.
 </p>
-<div align="center">
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/6fa55804-6799-419f-9222-359ba49c5e4c/deploy-status)](https://app.netlify.com/sites/developer-portfolio-v2/deploys)
-
-</div>
 
 <p align="center">
-  <a href="" target="_blank">
-    <img src="./public/images/demo-share.png" />
+  <a href="https://my-portfolio-eight-sigma-33.vercel.app" target="_blank">
+    <img src="./public/images/portfolio.png" />
   </a>
 </p>
 
-## 🚨 Forking this repo
+<p align="center">
+  🔗 <a href="https://my-portfolio-eight-sigma-33.vercel.app" target="_blank"><b>Voir le site en ligne</b></a>
+</p>
 
-Feel free to fork this repository and make it your own! You can use it as a starting point for your own portfolio website. However, please note that the effort and time deserves to be recognized and *plagiarism is a bad practice*. If you use this project, we would greatly appreciate it if you give credits to the designer <a href="https://www.behance.net/darelova" target="_blank">@darelova</a> and the developer <a href="https://github.com/alexdeploy">@alexdeploy</a>, or linking <a href="https://github.com/alexdeploy/developer-portfolio-v2">this repo</a>.
+## À propos
 
-Thanks 🤘 and enjoy it!
+Diplômée en Génie Logiciel de Polytech International, je suis actuellement développeuse freelance à la recherche de mon prochain défi professionnel. Ce portfolio met en avant mon expérience full-stack, mes projets académiques et professionnels, mes compétences techniques, ainsi que mes centres d'intérêt.
+
+## Fonctionnalités
+
+- **Accueil interactif** avec mini-jeu Snake intégré
+- **À propos de moi** : bio, centres d'intérêt, parcours éducatif
+- **Projets** filtrables par technologie
+- **Expérience professionnelle** avec galerie d'images par projet
+- **Compétences** présentées dans une interface de bureau interactive
+- **Certificats** affichés sur un tableau d'affichage animé
+- **Quiz** pour découvrir mon parcours de façon ludique
+- **Contact** avec formulaire d'envoi d'e-mail direct
 
 ## 🛠 Installation
 
-1. Clone the project to your local machine.
-
+1. Cloner le projet sur ta machine locale.
 ```sh
-git clone https://github.com/alexdeploy/developer-portfolio-v2.git
+git clone https://github.com/nour123tt/my-portfolio.git
 ```
-
-2. Navigate to the project directory
-
+2. Se déplacer dans le dossier du projet
 ```sh
-cd developer-portfolio-v2
+cd my-portfolio
 ```
-
-3. Install the required dependencies
-
+3. Installer les dépendances
 ```sh
-yarn
+yarn install
 ```
-
-4. Start the development server
-
+4. Lancer le serveur de développement
 ```sh
 yarn dev
 ```
+5. Le serveur de développement sera disponible sur <a href="http://localhost:3000/">http://localhost:3000/</a>
 
-5. The development server should now be running on <a href="http://localhost:3000/">http://localhost:3000/</a>
+## ✒️ Personnalisation
 
+Le contenu du portfolio est principalement piloté par le fichier `developer.json` à la racine du projet, qui contient les informations affichées : *projets*, *expériences*, *compétences*, *certificats*, *quiz*, *recommandations* et coordonnées de *contact*.
 
-## ✒️ Customization
+- `nuxt.config.ts` : configuration des meta tags et paramètres du site.
+- `public/pwa/manifest.json` : configuration PWA.
 
-The portfolio template includes some default content, but you can easily customize it to fit your needs. Here are some of the things you can change:
+## 🚀 Build et exécution en production
 
-* Update the `developer.json` file on root directory, which contains all the text for the project and the portfolio "user" information, including *projects*, *about-me*, *gists* (Ids) and *contact* info.
-
-* Update the `nuxt.config.ts` file for meta tags of website and some additional config.
-
-* Update the `public/pwa/manifest.json` file for PWA config.
-
-* Change the styling and design of the website to match your personal style.
-
-## 🚀 Building and Running for Production
-
-1. Generate a full static production build
-
+1. Générer un build de production
 ```sh
 yarn build
 ```
-
-2. Preview the site as it will appear once deployed.
-
+2. Prévisualiser le site tel qu'il apparaîtra une fois déployé
 ```sh
 yarn preview
 ```
 
-## Contributions
+## Stack technique
 
-If you find any bugs or have any suggestions, you can open an <a href="https://github.com/alexdeploy/developer-portfolio-v2/issues">issue</a>.
+- [Nuxt 3](https://nuxt.com/)
+- [Vue 3](https://vuejs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Vercel](https://vercel.com/)
+
+## Contact
+
+- **Email :** m.nour23165@pi.tn
+- **LinkedIn :** [linkedin.com/in/mhatlinour](https://www.linkedin.com/in/mhatlinour/)
+- **GitHub :** [github.com/nour123tt](https://github.com/nour123tt)
+
+---
+
+<p align="center">
+  <sub>Basé sur le concept <a href="https://www.figma.com/community/file/1100794861710979147" target="_blank">Portfolio for Developers V.2</a>, designé par <a href="https://www.behance.net/darelova" target="_blank">@darelova</a> et développé initialement par <a href="https://github.com/alexdeploy">@alexdeploy</a>.</sub>
+</p>
 
 ## License
 
-This project is licensed under the MIT License. See the <a href="https://github.com/alexdeploy/developer-portfolio-v2/blob/main/LICENSE">LICENSE</a> file for more information.
+Ce projet est sous licence MIT. Voir le fichier <a href="./LICENSE">LICENSE</a> pour plus d'informations.
